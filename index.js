@@ -6,8 +6,7 @@ const app = express();
 
 app.get("/",PaginaInicial);
 
-function PaginaInicial(requisição, resposta ){
-    
+function PaginaInicial(req, res) {
     const tabuada = parseInt(req.query.tabuada) || 1;
     const sequencia = parseInt(req.query.sequencia) || 10;
 
@@ -19,13 +18,21 @@ function PaginaInicial(requisição, resposta ){
     }
     resultado += `</ul>`;
 
-    };
-    
-
-
-
-
-
+    // Enviar a resposta para o cliente
+    res.send(`
+        <!DOCTYPE html>
+        <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Tabuada</title>
+        </head>
+        <body>
+            ${resultado}
+        </body>
+        </html>
+    `)}
+ 
 app.listen(porta, host, () => { 
     console.log("Servidor em execução http//" + host + ":" + porta);
 
