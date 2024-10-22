@@ -4,14 +4,20 @@ const host ='0.0.0.0';
 const porta = 3000;
 const app = express();
 
-function PaginaInicial(requisição, resposta ){
-    resposta.send(`<h1>Seja bem vindo</h1> 
-                    <br>
-                    <h2>Primeiros passos para desenvolvimento de aplicação web com Npde/JS,/h2>
-                    <h3>Pagina inicial</h3>`);
-}
+function gerarTabuada() {
+    const numero = document.getElementById('numero').value;
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML = ''; // Limpa o resultado anterior
 
-app.get("/",PaginaInicial);
+    if (numero !== '') {
+        for (let i = 0; i <= 10; i++) {
+            resultado.innerHTML += `<p>${numero} x ${i} = ${numero * i}</p>`;
+        }
+    } else {
+        resultado.innerHTML = '<p>Por favor, insira um número!</p>';
+    }
+}
+app.get("/",gerarTabuada);
 
 
 app.listen(porta, host, () => { 
