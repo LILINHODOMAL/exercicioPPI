@@ -28,7 +28,7 @@ function PaginaInicial(req, res) {
             <title>Tabuada</title>
         </head>
         <body>
-            ${resultado}
+           
         </body>
         </html>
     `)}
