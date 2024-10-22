@@ -19,26 +19,7 @@ function PaginaInicial(requisição, resposta ){
     }
     resultado += `</ul>`;
 
-    // Enviar a resposta HTML
-    res.send(`
-        <!DOCTYPE html>
-        <html lang="pt-br">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Tabuada</title>
-            <style>
-                body { font-family: Arial, sans-serif; }
-                h1 { color: #333; }
-                ul { list-style-type: none; padding: 0; }
-                li { margin: 5px 0; }
-            </style>
-        </head>
-        <body>
-            ${resultado}
-        </body>
-        </html>
-    `)};
+    };
     
 
 
