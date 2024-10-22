@@ -4,9 +4,9 @@ const host ='0.0.0.0';
 const porta = 3000;
 const app = express();
 
-app.get("/",PaginaInicial);
+app.get("/",tabuada);
 
-function PaginaInicial(req, res) {
+function tabuada(req, res) {
     const tabuada = parseInt(req.query.tabuada) || 1;
     const sequencia = parseInt(req.query.sequencia) || 10;
 
@@ -28,7 +28,7 @@ function PaginaInicial(req, res) {
             <title>Tabuada</title>
         </head>
         <body>
-           
+            ${resultado}
         </body>
         </html>
     `)}
